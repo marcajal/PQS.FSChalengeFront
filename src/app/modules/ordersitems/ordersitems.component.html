@@ -1,0 +1,49 @@
+<div class="container">
+
+    <div class="card">
+        <div class="card-header">
+            Detalle Orden
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{orderDescription}}</h5>
+    
+          <button (click)="Reject()" type="button" style="float: right;" class="btn btn-danger">Rechazar</button>
+          <button (click)="Approbe()" type="button" style="float: right;" class="btn btn-success">Aprobar</button>
+        
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="inner">
+                
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Descripcion item</th>
+                                <th scope="col">Cantidad</th>
+                                <th scope="col">Precio Unitario</th>
+                                <th scope="col">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let orderitem of OrdersItemsList">
+                                <th scope="row">{{orderitem.orderItemId}}</th>
+                                <td>{{orderitem.itemDescription}}</td>
+                                <td>{{orderitem.quantity}}</td>
+                                <td>${{orderitem.unitPrice}}</td>
+                                <td>${{orderitem.unitPrice*orderitem.quantity}}</td>
+                            </tr>
+                            <tr *ngFor="let orderitem of OrdersItemsList">
+                                <td>TOTAL: {{getTotal(orderitem.unitPrice*orderitem.quantity)}}</td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    
+      </div>
+  </div>
+  
+  
