@@ -1,8 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
 import {OrdersService} from '../../api/services/orders.service';
-import {Status} from '../../api/models/status.models';
-import {Orders} from '../../api/models/orders-models';
 
 @Component({
   selector: 'app-orders',
@@ -17,14 +15,6 @@ export class OrdersComponent implements OnInit {
     this.statusSelected = event.target.value;
     this.loadOrders(this.statusSelected);
   }
-
-  
-  // status: Status[] = [
-  //   {id: 0, description: 'Pendiente'},
-  //   {id: 1, description: 'Aprobada'},
-  //   {id: -1, description: 'Rechazada'},
-  //   {id: 99, description: '-Seleccionar Estado-'}
-  // ];
 
   OrdersList: any = [];
   constructor(

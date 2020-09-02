@@ -65,7 +65,6 @@ export class OrdersitemsComponent implements OnInit {
   ApprobeOrder(id, order) {
     return this.ordersService.putOrders(id, order).subscribe((data: {}) => {
       console.log('ApprobeOrder: ' + data);
-      //this.OrdersItemsList = data;
     });
   }
   RejectOrder(id) {
